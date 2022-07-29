@@ -12,31 +12,34 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      wrappers: ['@/wrappers/BaseWrapper'],
       redirect: '/home',
+    },
+    {
+      name: ' 首页',
+      path: '/home',
       routes: [
-        // {
-        //   path: '/',
-        //   redirect: '/home',
-        // },
         {
           name: '首页',
-          path: '/home',
+          path: '/home/index',
           component: './Home',
         },
-        {
-          name: '权限演示',
-          path: '/access',
-          component: './Access',
-        },
-        {
-          name: ' CRUD 示例',
-          path: '/table',
-          component: './Table',
-        },
-      ]
+      ],
+    },
+    // {
+    //   name: '首页',
+    //   path: '/home',
+    //   component: './Home',
+    // },
+    {
+      name: '权限演示',
+      path: '/access',
+      component: './Access',
+    },
+    {
+      name: ' CRUD 示例',
+      path: '/table',
+      component: './Table',
     },
   ],
   npmClient: 'pnpm',
 });
-
